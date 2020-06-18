@@ -5,7 +5,7 @@ function makeUsersArray() {
       user_name: 'test-user-1',
       full_name: 'Test user 1',
       nickname: 'TU1',
-      password: 'password',
+      password: '$2a$12$aSdLMChBO3qEXeFR87RTbOraKMbqgRfh4xneNTuhL84vNqr43I0Le',
       date_created: '2029-01-22T16:28:32.615Z',
     },
     {
@@ -13,7 +13,7 @@ function makeUsersArray() {
       user_name: 'test-user-2',
       full_name: 'Test user 2',
       nickname: 'TU2',
-      password: 'password',
+      password: '$2a$12$aSdLMChBO3qEXeFR87RTbOraKMbqgRfh4xneNTuhL84vNqr43I0Le',
       date_created: '2029-01-22T16:28:32.615Z',
     },
     {
@@ -21,7 +21,7 @@ function makeUsersArray() {
       user_name: 'test-user-3',
       full_name: 'Test user 3',
       nickname: 'TU3',
-      password: 'password',
+      password: '$2a$12$aSdLMChBO3qEXeFR87RTbOraKMbqgRfh4xneNTuhL84vNqr43I0Le',
       date_created: '2029-01-22T16:28:32.615Z',
     },
     {
@@ -29,7 +29,7 @@ function makeUsersArray() {
       user_name: 'test-user-4',
       full_name: 'Test user 4',
       nickname: 'TU4',
-      password: 'password',
+      password: '$2a$12$aSdLMChBO3qEXeFR87RTbOraKMbqgRfh4xneNTuhL84vNqr43I0Le',
       date_created: '2029-01-22T16:28:32.615Z',
     },
   ]
