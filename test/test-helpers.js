@@ -244,6 +244,12 @@ function seedThingsTables(db, users, things, reviews=[]) {
     )
 }
 
+function seedUsers(db, users) {
+  return db
+    .into('thingful_users')
+    .insert(users)
+}
+
 function seedMaliciousThing(db, user, thing) {
   return db
     .into('thingful_users')
@@ -271,6 +277,7 @@ module.exports = {
   makeThingsFixtures,
   cleanTables,
   seedThingsTables,
+  seedUsers,
   seedMaliciousThing,
   makeAuthHeader,
 }
