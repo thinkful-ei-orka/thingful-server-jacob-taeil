@@ -67,26 +67,23 @@ describe('Auth Endpoints', function() {
         .expect(400, { error: `Incorrect user_name or password` })
     })
 
-    it.skip(`responds 200 and JWT auth token using secret when valid credentials`, () => {
+    it(`responds 200 and JWT auth token using secret when valid credentials`, () => {
       const userValidCreds = {
         user_name: testUser.user_name,
         password: 'password',
       }
-      const expectedToken = jwt.sign(
-        { user_id: testUser.id }, // payload
-        process.env.JWT_SECRET,
-        {
-          subject: testUser.user_name,
-          algorithm: 'HS256',
-        }
-      )
       return supertest(app)
         .post('/api/auth/login')
         .send(userValidCreds)
-        .expect(200, {
-          authToken: expectedToken,
+        .then(response => {
+          return jwt.verify(response.body.authToken, process.env.JWT_SECRET)
+        })
+        .then((decoded) => {
+          expect(decoded.user_id).to.eql(testUser.id)
+        })
+        .catch((err) => {
+          throw err
         })
       })
-
   })
 })
